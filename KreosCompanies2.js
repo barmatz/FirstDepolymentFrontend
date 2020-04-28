@@ -20,11 +20,7 @@ rp(url)
   });
 
 app.get("/", function(req, res){
-	if(err){
-		throw new Error(err)
-	} else{
-		res.send(INVESTMENTS)
-	}
+	res.send(INVESTMENTS)
 })
 
 app.set('port', process.env.PORT || 3000);
