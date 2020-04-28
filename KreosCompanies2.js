@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser")
 const cors = require("cors")
+const path = require('path');
 
 const rp = require('request-promise');
 const url = 'http://www.kreoscapital.com/portfolio/';
@@ -22,12 +23,13 @@ rp(url)
     throw(err);
   });
 
+// Provide an experimental front-end client
+app.use('/static', express.static(path.resolve(__dirname, 'client', 'build', 'static')));
+app.use('/client', express.static(path.resolve(__dirname, 'client', 'build')));
+
 app.get("/", function(req, res){
 	res.json(INVESTMENTS)
 })
-
-// Provide an experimental front-end client
-app.get('/client', expresOs.static(path.resolve(__dirname, 'client')));
 
 app.set('port', process.env.PORT || 3000);
 
