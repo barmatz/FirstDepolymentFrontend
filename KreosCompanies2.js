@@ -6,6 +6,11 @@ const url = 'http://www.kreoscapital.com/portfolio/';
 
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 let INVESTMENTS;
 
 rp(url)
