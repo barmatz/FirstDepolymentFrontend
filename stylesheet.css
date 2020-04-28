@@ -1,0 +1,28 @@
+body{
+	background-color: #EDD6D1;
+}
+
+table{
+	background-color: white;
+	width: auto;
+}
+
+.jumbotron {
+	width: 100%;
+	text-align: center;
+	opacity: 70%;
+}
+
+
+tr {
+	padding: 5px;
+}
+
+th {
+	cursor: pointer;
+	font-size: large;
+}
+
+.container-fluid {
+	margin: 20px 100px;
+}
