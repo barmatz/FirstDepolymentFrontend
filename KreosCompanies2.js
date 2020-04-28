@@ -26,6 +26,9 @@ app.get("/", function(req, res){
 	res.json(INVESTMENTS)
 })
 
+// Provide an experimental front-end client
+app.get('/client', expresOs.static(path.resolve(__dirname, 'client')));
+
 app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('port'), function () {
